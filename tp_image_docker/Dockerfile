@@ -11,3 +11,5 @@ RUN pip install -r requirements.txt
 ADD src /app
 
 CMD [ "python", "main.py" ]
+
+EXPOSE 8080

@@ -1,10 +1,15 @@
-import pandas as pd
-import numpy as np
+from flask import Flask
 
+app = Flask(__name__)
 
-def main():
-    df = pd.DataFrame([{"name": "Florian", "surname": "Posez", "student number":22320180}])
-    print(df)
+def generate_html_from_dataframe(df):
+    html = "<h1>Student Data</h1>"
+    html += df.to_html(index=False)
+    return html
 
-if __name__ == "__main__":
-    main()
+@app.route('/')
+def index():
+    return "Florian POSEZ 22320180"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
