@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-flask-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-flask
+  template:
+    metadata:
+      labels:
+        app: python-flask
+    spec:
+      containers:
+      - name: python-flask-docker
+        image: myst4ke/python-flask-docker:1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
