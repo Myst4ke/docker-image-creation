@@ -6,4 +6,4 @@ Capture d'écran de `docker run -it python-docker-dev`:
 
 Capture d'écran de `kubectl get all` pour obtenir les pods et les services:
 <br>
-![asset](running.png)
+![asset](getAll.png)
